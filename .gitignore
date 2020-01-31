@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/MicrochartsSample/bin/Debug/netstandard2.0
+/MicrochartsSample/obj
+/MicrochartsSample.Android/bin/Debug
+/MicrochartsSample.Android/obj
+/MicrochartsSample.Android/MicrochartsSample.Android.csproj.user
+/MicrochartsSample.iOS/obj

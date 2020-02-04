@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MicrochartsSample.Services.Interface
+namespace MicrochartsSample.Services
 {
     public interface IDeviceService
     {
-        SKBitmap GetImgFromFile(string fileName);
+        /// <summary>
+        /// 抓圖片
+        /// </summary>
+        SKBitmap GetImgFromFile(int shopType);
     }
 }

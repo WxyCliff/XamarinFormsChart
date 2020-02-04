@@ -15,6 +15,8 @@ namespace MicrochartsSample.ViewModels
 
         public IConsumeService cosumeService => DependencyService.Get<IConsumeService>();
 
+        public IDeviceService deviceService => DependencyService.Get<IDeviceService>();
+
         bool isBusy = false;
         public bool IsBusy
         {

@@ -35,6 +35,27 @@ namespace MicrochartsSample
             }
         }
 
+        public static string ToImageName(int shopType)
+        {
+            switch (shopType)
+            {
+                case 0:
+                    return "shoppingcart";
+                case 1:
+                    return "car";
+                case 2:
+                    return "fork";
+                case 3:
+                    return "joystick";
+                case 4:
+                    return "house";
+                case 5:
+                    return "tag";
+                default:
+                    return "tag";
+            }
+        }
+
         public static SKBitmap ToBitmap(int shopType)
         {
             string fileName = "";

@@ -14,6 +14,7 @@ namespace MicrochartsSample
             InitializeComponent();
 
             DependencyService.Register<ConsumeService>();
+            DependencyService.Register<IDeviceService>();
             MainPage = new MainPage();
         }
 

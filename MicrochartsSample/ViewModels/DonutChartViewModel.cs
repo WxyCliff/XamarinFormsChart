@@ -15,61 +15,48 @@ namespace MicrochartsSample.ViewModels
     {
         public Chart Chart { get; set; }
 
-        public ObservableCollection<Microcharts.Entry> DataList
+        public ObservableCollection<ConsumViewModel> DataList
         {
             get { return this._dataList; }
             set
             {
                 this._dataList = value;
+
+                //todo 依實作改名稱
                 OnPropertyChanged(nameof(this.DataList));
             }
         }
 
-        ObservableCollection<Microcharts.Entry> _dataList;
+
         public DonutChartViewModel()
         {
             Title = "DonutChart";
             PollValuesAsync();
         }
 
-        static readonly HttpClient client = new HttpClient();
-        SKBitmap webBitmap;
-
         private async Task PollValuesAsync()
         {
-
             await Task.Delay(500);
 
             try
             {
-                string url = "https://simpleicon.com/wp-content/uploads/cute.png";
-                using (Stream stream = await client.GetStreamAsync(url))
-                {
-                    using (MemoryStream memStream = new MemoryStream())
-                    {
-                        await stream.CopyToAsync(memStream);
-                        memStream.Seek(0, SeekOrigin.Begin);
-
-                        webBitmap = SKBitmap.Decode(memStream);
-                    }
-                }
-
                 List<Consume> cosumes = cosumeService.GetConsumes();
                 var entries = cosumes.Select(x => new Microcharts.Entry((float)x.Amount)
                 {
                     Label = ChartHelper.ToWord(x.DataType),
                     ValueLabel = x.Amount.ToString(),
                     Color = ChartHelper.GetRandomColor(),
-                    Icon = webBitmap
+                    Icon = deviceService.GetImgFromFile(x.DataType)
                 }
                 );
 
                 var _chart = new DonutChart();
                 _chart.Entries = entries;
-                _chart.LabelTextSize = 40;
+                _chart.LabelTextSize = 40; //文字大小
                 this.Chart = _chart;
 
-                this.DataList = new ObservableCollection<Microcharts.Entry>(entries);
+                var list = cosumes.Select(x => new ConsumViewModel() { Id = x.Id, DataType = x.DataType, Amount = x.Amount }).ToList();
+                this.DataList = new ObservableCollection<ConsumViewModel>(list);
 
                 OnPropertyChanged(nameof(Chart));
             }
@@ -77,7 +64,29 @@ namespace MicrochartsSample.ViewModels
             {
                 Console.WriteLine(ex.Message);
             }
-
         }
+
+        ObservableCollection<ConsumViewModel> _dataList;
+    }
+
+    public class ConsumViewModel : Consume
+    {
+        public string ImageName
+        {
+            get
+            {
+                return ChartHelper.ToImageName(this.DataType);
+            }
+        }
+
+        public string ShopTypeName
+        {
+            get
+            {
+                return ChartHelper.ToWord(this.DataType);
+            }
+        }
+
+      
     }
 }

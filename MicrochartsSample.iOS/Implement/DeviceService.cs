@@ -1,20 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Foundation;
-using MicrochartsSample.Services.Interface;
+﻿using MicrochartsSample.iOS;
+using MicrochartsSample.Services;
 using SkiaSharp;
+using SkiaSharp.Views.iOS;
+using System;
 using UIKit;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(DeviceService))]
 namespace MicrochartsSample.iOS
 {
     public class DeviceService : IDeviceService
     {
-        public SKBitmap GetImgFromFile(string fileName)
+        public SKBitmap GetImgFromFile(int shopType)
         {
-            throw new NotImplementedException();
+            switch (shopType)
+            {
+                case 0:
+                    return UIImage.FromBundle("shoppingcart").ToSKBitmap();
+                case 1:
+                    return UIImage.FromBundle("car").ToSKBitmap();
+                case 2:
+                    return UIImage.FromBundle("fork").ToSKBitmap();
+                case 3:
+                    return UIImage.FromBundle("joystick").ToSKBitmap();
+                case 4:
+                    return UIImage.FromBundle("house").ToSKBitmap();
+                case 5:
+                    return UIImage.FromBundle("tag").ToSKBitmap();
+                default:
+                    return UIImage.FromBundle("tag").ToSKBitmap();
+            }
         }
     }
 }

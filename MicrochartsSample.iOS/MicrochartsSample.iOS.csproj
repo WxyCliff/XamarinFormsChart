@@ -121,6 +121,42 @@
     <BundleResource Include="Resources\xamarin_logo.png" />
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <ImageAsset Include="image.xcassets\car.imageset\car.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\car.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\fork.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\fork.imageset\fork.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\house.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\house.imageset\house.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\tag.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\shoppingcart.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\joystick.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\joystick.imageset\joystick.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\shoppingcart.imageset\shoppingcart.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="image.xcassets\tag.imageset\tag.pdf">
+      <Visible>false</Visible>
+    </ImageAsset>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>

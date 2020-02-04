@@ -7,6 +7,9 @@ namespace MicrochartsSample.Services
 {
     public interface IConsumeService
     {
+        /// <summary>
+        /// 取得資料
+        /// </summary>
         List<Consume> GetConsumes();
     }
 }

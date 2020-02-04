@@ -15,5 +15,12 @@ ADD sln
 	Microcharts.Shared.shproj
 
 
-ADD Forms
+ADD 
 	ChartView.cs
+
+ADD 
+   DonutChartViewModel.cs
+   DonutChartPage.xaml
+
+   BarChartViewModel.cs
+   BarChartPage.xaml

@@ -1,11 +1,7 @@
-﻿
-
-using Android.Net;
+﻿using Android.Graphics;
 using MicrochartsSample.Droid;
-using MicrochartsSample.Services.Interface;
+using MicrochartsSample.Services;
 using SkiaSharp;
-using System.IO;
-using System.Reflection;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(DeviceService))]
@@ -13,14 +9,32 @@ namespace MicrochartsSample.Droid
 {
     public class DeviceService : IDeviceService
     {
-        public SKBitmap GetImgFromFile(string fileName)
+        public SKBitmap GetImgFromFile(int shopType)
         {
-            var assembly = this.GetType().GetTypeInfo().Assembly;
-
-            using (Stream s = assembly.GetManifestResourceStream(fileName))
+            switch (shopType)
             {
-                return SKBitmap.Decode(s);
+                case 0:
+                    return GetDrawableToBitmap(Resource.Drawable.shoppingcart);
+                case 1:
+                    return GetDrawableToBitmap(Resource.Drawable.car);
+                case 2:
+                    return GetDrawableToBitmap(Resource.Drawable.fork);
+                case 3:
+                    return GetDrawableToBitmap(Resource.Drawable.joystick);
+                case 4:
+                    return GetDrawableToBitmap(Resource.Drawable.house);
+                case 5:
+                    return GetDrawableToBitmap(Resource.Drawable.tag);
+                default:
+                    return GetDrawableToBitmap(Resource.Drawable.tag);
             }
         }
+
+        private SKBitmap GetDrawableToBitmap(int resId)
+        {
+            Bitmap bitmap = BitmapFactory.DecodeResource(AndroidApp.CurrentContext.Resources, resId);
+            return SKBitmap.FromImage(SkiaSharp.Views.Android.AndroidExtensions.ToSKImage(bitmap));
+        }
+
     }
 }

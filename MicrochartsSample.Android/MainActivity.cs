@@ -9,11 +9,20 @@ using Android.OS;
 
 namespace MicrochartsSample.Droid
 {
+
+    public class AndroidApp
+    {
+        public static Activity CurrentContext { get; set; }
+    }
+
+
     [Activity(Label = "MicrochartsSample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            AndroidApp.CurrentContext = this;
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

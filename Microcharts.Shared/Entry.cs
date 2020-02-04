@@ -55,6 +55,10 @@ namespace Microcharts
 		/// <value>The color of the text.</value>
 		public SKColor TextColor { get; set; } = SKColors.Gray;
 
+		/// <summary>
+		/// icon with data
+		/// </summary>
+		public SKBitmap Icon { get; set; }
 		#endregion
 	}
 }

@@ -23,6 +23,8 @@ namespace Microcharts
         /// <value>The hole radius.</value>
         public float HoleRadius { get; set; } = 0;
 
+
+
         #endregion
 
         #region Methods

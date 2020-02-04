@@ -1,5 +1,4 @@
 ﻿using Microcharts;
-using MicrochartsSample.Helper;
 using MicrochartsSample.Models;
 using System;
 using System.Collections.Generic;
@@ -29,7 +28,7 @@ namespace MicrochartsSample.ViewModels
    
 
                 List<Consume> cosumes = cosumeService.GetConsumes();
-                var entries = cosumes.Select(x => new Microcharts.Entry((float)x.Amount) { Label = x.DataType, ValueLabel = x.Amount.ToString(), Color = ChartHelper.GetRandomColor() });
+                var entries = cosumes.Select(x => new Microcharts.Entry((float)x.Amount) { Label = ChartHelper.ToWord(x.DataType), ValueLabel = x.Amount.ToString(), Color = ChartHelper.GetRandomColor() });
 
                 var _chart = new RadarChart();
                 _chart.Entries = entries;

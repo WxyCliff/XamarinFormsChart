@@ -19,8 +19,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding Value}"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Label}" Margin="10,0,0,0" VerticalOptions="Center"/>
+                            <Label Text="{Binding ValueLabel}" Margin="0,0,10,0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

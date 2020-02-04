@@ -1,13 +1,8 @@
 ﻿using Microcharts;
-using MicrochartsSample.Helper;
 using MicrochartsSample.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace MicrochartsSample.ViewModels
 {
@@ -28,7 +23,7 @@ namespace MicrochartsSample.ViewModels
             await Task.Delay(500);
 
             List<Consume> cosumes = cosumeService.GetConsumes();
-            var entries = cosumes.Select(x => new Microcharts.Entry((float)x.Amount) { Label = x.DataType, ValueLabel = x.Amount.ToString(), Color = ChartHelper.GetRandomColor() });
+            var entries = cosumes.Select(x => new Microcharts.Entry((float)x.Amount) { Label = ChartHelper.ToWord(x.DataType), ValueLabel = x.Amount.ToString(), Color = ChartHelper.GetRandomColor() });
 
             var _chart = new RadialGaugeChart();
             _chart.Entries = entries;

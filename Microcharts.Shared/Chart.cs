@@ -156,15 +156,26 @@ namespace Microcharts
                     var space = hasOffset ? captionMargin : 0;
                     var captionX = isLeft ? this.Margin : width - this.Margin - this.LabelTextSize;
 
-                    using (var paint = new SKPaint
+
+
+                    if (entry.Icon == null)
                     {
-                        Style = SKPaintStyle.Fill,
-                        Color = entry.Color,
-                    })
-                    {
-                        var rect = SKRect.Create(captionX, y, this.LabelTextSize, this.LabelTextSize);
-                        canvas.DrawRect(rect, paint);
+                        using (var paint = new SKPaint { Style = SKPaintStyle.Fill, Color = entry.Color, })
+                        {
+                            var rect = SKRect.Create(captionX, y, this.LabelTextSize, this.LabelTextSize);
+                            canvas.DrawRect(rect, paint);
+                        }
                     }
+                    else
+                    {
+                        SKRect src = SKRect.Create(0, 0, entry.Icon.Width, entry.Icon.Height);
+
+                        //setting image width height here
+                        SKRect dest = SKRect.Create(captionX, y - (this.LabelTextSize / 2), this.LabelTextSize, this.LabelTextSize);
+
+                        canvas.DrawBitmap(entry.Icon, src, dest, null);
+                    }
+
 
                     if (isLeft)
                     {

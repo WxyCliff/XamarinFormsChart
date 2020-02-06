@@ -45,11 +45,11 @@ namespace MicrochartsSample.ViewModels
                 {
                     Label = ChartHelper.ToWord(x.DataType),
                     ValueLabel = x.Amount.ToString(),
-                    Color = ChartHelper.GetRandomColor(),
-                    Icon = deviceService.GetImgFromFile(x.DataType)
+                    Color = ChartHelper.GetRandomColor(),  //TODO 隨機顏色或 改成指定顏色
+                    Icon = deviceService.GetImgFromFile(x.DataType) //TODO 圖案可以不加
                 }
                 );
-
+                
                 var _chart = new DonutChart();
                 _chart.Entries = entries;
                 _chart.LabelTextSize = 40; //文字大小
@@ -86,7 +86,5 @@ namespace MicrochartsSample.ViewModels
                 return ChartHelper.ToWord(this.DataType);
             }
         }
-
-      
     }
 }

@@ -24,5 +24,16 @@ namespace MicrochartsSample.Services
 
             return list;
         }
+
+        public List<ShopAnalysis> GetShopsConsumes()
+        {
+            var list = new List<ShopAnalysis>();
+            list.Add(new ShopAnalysis() { ShopName = "台灣中油股份有限公司", ConsumeCount = 15, CosumeAmount = 5000 });
+            list.Add(new ShopAnalysis() { ShopName = "和德昌股份有限公司", ConsumeCount = 10, CosumeAmount = 4000 });
+            list.Add(new ShopAnalysis() { ShopName = "三商行股份有限公司", ConsumeCount = 8, CosumeAmount = 3000 });
+            list.Add(new ShopAnalysis() { ShopName = "必勝客股份有限公司", ConsumeCount = 7, CosumeAmount = 2000 });
+            list.Add(new ShopAnalysis() { ShopName = "達美樂披薩股份有限公司", ConsumeCount = 6, CosumeAmount = 1000 });
+            return list;
+        }
     }
 }

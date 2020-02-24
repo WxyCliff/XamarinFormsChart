@@ -46,7 +46,7 @@ namespace MicrochartsSample.ViewModels
                     Label = ChartHelper.ToWord(x.DataType),
                     ValueLabel = x.Amount.ToString(),
                     Color = ChartHelper.GetRandomColor(),  //TODO 隨機顏色或 改成指定顏色
-                    Icon = deviceService.GetImgFromFile(x.DataType) //TODO 圖案可以不加
+                    Icon = deviceService.GetImgFromFile(x.DataType) //
                 }
                 );
                 

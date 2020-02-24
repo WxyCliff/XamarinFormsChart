@@ -104,7 +104,7 @@ namespace Microcharts
                         paint.IsAntialias = true;
                         paint.Color = entry.TextColor;
                         paint.IsStroke = false;
-                        paint.Typeface = SKFontManager.Default.MatchCharacter(entry.Label[0]);
+                        paint.Typeface = entry.Label.ToSKTypeface();
 
                         var bounds = new SKRect();
                         var text = entry.Label;

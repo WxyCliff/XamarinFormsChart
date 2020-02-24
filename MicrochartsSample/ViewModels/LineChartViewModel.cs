@@ -30,8 +30,19 @@ namespace MicrochartsSample.ViewModels
 
             var _chart = new LineChart();
             _chart.Entries = entries;
+
+            // customized
             _chart.LabelTextSize = 40;
+            _chart.LineMode = LineMode.Straight;
+            _chart.LineSize = 8;
+            _chart.PointMode = PointMode.Square;
+            _chart.PointSize = 18;
+
+
             this.Chart = _chart;
+
+
+
             OnPropertyChanged(nameof(Chart));
 
         }

@@ -11,6 +11,7 @@ namespace MicrochartsSample.Models
         PointChart,
         LineChart,
         DonutChart,
+        CustDonutChart,
         RadialGaugeChart,
         RadarChart
     }

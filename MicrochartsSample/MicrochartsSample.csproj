@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\DonutChartPage.xaml.cs">
+      <DependentUpon>DonutChartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\LineChartPage.xaml.cs">
       <DependentUpon>LineChartPage.xaml</DependentUpon>
     </Compile>
@@ -29,8 +32,8 @@
     <Compile Update="Views\PointChartPage.xaml.cs">
       <DependentUpon>PointChartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\DonutChartPage.xaml.cs">
-      <DependentUpon>DonutChartPage.xaml</DependentUpon>
+    <Compile Update="Views\CustDonutChartPage.xaml.cs">
+      <DependentUpon>CustDonutChartPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\BarChartPage.xaml.cs">
       <DependentUpon>BarChartPage.xaml</DependentUpon>

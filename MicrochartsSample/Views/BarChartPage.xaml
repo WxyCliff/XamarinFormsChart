@@ -15,6 +15,13 @@
     <StackLayout>
         <local:ChartView Chart="{Binding Chart}"  HeightRequest="300"  Margin="20,0,20,0" />
         <ListView ItemsSource="{Binding DataList}">
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name" Margin="10,0,0,0" VerticalOptions="Center"/>
+                    <Label Text="Times"  VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                    <Label Text="Amount"  Margin="30,0,10,0" VerticalOptions="Center" HorizontalOptions="End"/>
+                </StackLayout>
+            </ListView.Header>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -22,7 +29,14 @@
                             <BoxView BackgroundColor="{Binding ItemColor}" WidthRequest="20" HeightRequest="20" VerticalOptions="Center" Margin="10,0,0,0" ></BoxView>
                             <Label Text="{Binding ShopName}" Margin="10,0,0,0" VerticalOptions="Center"/>
                             <Label Text="{Binding ConsumeCount}"  VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                            <Label Text="{Binding CosumeAmount}" Margin="30,0,10,0" VerticalOptions="Center" HorizontalOptions="End"/>
+                            <Label  Margin="30,0,10,0" VerticalOptions="Center" HorizontalOptions="End">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="$"></Span>
+                                        <Span Text="{Binding CosumeAmount}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

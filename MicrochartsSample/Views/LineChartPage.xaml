@@ -13,7 +13,7 @@
         <vm:LineChartViewModel />
     </ContentPage.BindingContext>
 
-    <local:ChartView Chart="{Binding Chart}" >
+    <local:ChartView Chart="{Binding Chart}"  >
 
     </local:ChartView>
     

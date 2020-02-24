@@ -19,8 +19,4 @@ ADD
 	ChartView.cs
 
 ADD 
-   DonutChartViewModel.cs
-   DonutChartPage.xaml
-
-   BarChartViewModel.cs
-   BarChartPage.xaml
+  ViewModels & Pages

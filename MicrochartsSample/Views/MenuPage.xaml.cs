@@ -25,6 +25,7 @@ namespace MicrochartsSample.Views
                 new HomeMenuItem {Id = MenuItemType.PointChart, Title="PointChart" },
                 new HomeMenuItem {Id = MenuItemType.LineChart, Title="LineChart" },
                 new HomeMenuItem {Id = MenuItemType.DonutChart, Title="DonutChart" },
+                new HomeMenuItem {Id = MenuItemType.CustDonutChart, Title="CustDonutChart" },
                 new HomeMenuItem {Id = MenuItemType.RadialGaugeChart, Title="RadialGauge" },
                 new HomeMenuItem {Id = MenuItemType.RadarChart, Title="RadarChart" }
             };

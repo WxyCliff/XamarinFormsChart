@@ -43,6 +43,9 @@ namespace MicrochartsSample.Views
                     case (int)MenuItemType.DonutChart:
                         MenuPages.Add(id, new NavigationPage(new DonutChartPage()));
                         break;
+                    case (int)MenuItemType.CustDonutChart:
+                        MenuPages.Add(id, new NavigationPage(new CustDonutChartPage()));
+                        break;
                     case (int)MenuItemType.RadialGaugeChart:
                         MenuPages.Add(id, new NavigationPage(new RadialGaugeChartPage()));
                         break;

@@ -27,7 +27,7 @@ namespace Microcharts
                         Color = labelColor,
                         IsStroke = false,
                         TextAlign = horizontalAlignment,
-                        Typeface = SKFontManager.Default.MatchCharacter(label[0])
+                        Typeface = label.ToSKTypeface()
                     })
                     {
                         var bounds = new SKRect();
@@ -50,7 +50,7 @@ namespace Microcharts
                         Color = valueColor,
                         IsStroke = false,
                         TextAlign = horizontalAlignment,
-                        Typeface = SKFontManager.Default.MatchCharacter(label[0])
+                        Typeface = label.ToSKTypeface()
                     })
                     {
                         var bounds = new SKRect();

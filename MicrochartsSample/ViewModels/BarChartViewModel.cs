@@ -1,13 +1,10 @@
 ﻿using Microcharts;
 using MicrochartsSample.Models;
 using SkiaSharp.Views.Forms;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MicrochartsSample.ViewModels
@@ -42,13 +39,26 @@ namespace MicrochartsSample.ViewModels
 
             await Task.Delay(500);
 
-
+            // 取得資料
             List<ShopAnalysis> cosumes = cosumeService.GetShopsConsumes();
-            var entries = cosumes.Select((x, i) => new Microcharts.Entry((float)x.ConsumeCount) { Label ="", ValueLabel = x.ConsumeCount.ToString(), Color = ConvertColor(i).ToSKColor() });
+
+            // 將資料轉為圖表物件
+            IEnumerable<Microcharts.Entry> entries = cosumes.Select((x, i) => new Microcharts.Entry((float)x.ConsumeCount)
+            {
+                Label = (i + 1).ToString(),
+                ValueLabel = x.ConsumeCount.ToString(),
+                Color = ConvertColor(i).ToSKColor()
+            });
 
             var _chart = new BarChart();
+
+            //  加入圖表資料
             _chart.Entries = entries;
+
+            // 設定文字大小
             _chart.LabelTextSize = 40;
+
+            // 更新圖表系結屬性
             this.Chart = _chart;
 
             var list = cosumes.Select((x, i) => new ShopAnalysisViewModel() { ShopName = x.ShopName, ConsumeCount = x.ConsumeCount, CosumeAmount = x.CosumeAmount, ItemColor = ConvertColor(i) }).ToList();
@@ -56,9 +66,14 @@ namespace MicrochartsSample.ViewModels
             OnPropertyChanged(nameof(Chart));
         }
 
+        /// <summary>
+        /// 數字轉顏色
+        /// </summary>
         private Color ConvertColor(int idx)
         {
-            switch (idx)
+            int colorIndex = idx % 5;
+
+            switch (colorIndex)
             {
                 case 0: return Color.Red;
                 case 1: return Color.Orange;

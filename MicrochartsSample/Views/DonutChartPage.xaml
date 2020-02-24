@@ -16,18 +16,6 @@
 
     <StackLayout>
         <local:ChartView Chart="{Binding Chart}" HeightRequest="200"/>
-        <ListView ItemsSource="{Binding DataList}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding ImageName}" WidthRequest="20" HeightRequest="20" Margin="10,0,0,0"></Image>
-                            <Label Text="{Binding ShopTypeName}" Margin="10,0,0,0" VerticalOptions="Center"/>
-                            <Label Text="{Binding Amount}" Margin="0,0,10,0" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
     </StackLayout>
 </ContentPage>
